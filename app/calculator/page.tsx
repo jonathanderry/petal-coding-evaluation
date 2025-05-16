@@ -1,13 +1,7 @@
 "use client";
 
-import dynamic from 'next/dynamic';
 import { useState } from "react";
-
-// Import CodeSelector with no SSR to avoid hydration errors
-const CodeSelector = dynamic(
-  () => import("@/components/CodeSelector/CodeSelector"),
-  { ssr: false }
-);
+import CodeSelector from "@/components/CodeSelector/CodeSelector";
 
 const Calculator = () => {
   const [totalPrice, setTotalPrice] = useState(0);

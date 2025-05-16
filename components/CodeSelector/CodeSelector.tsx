@@ -43,31 +43,16 @@ const CodeSelector = ({ onTotalPriceChange }: CodeSelectorProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedCodeId, setSelectedCodeId] = useState<number | "">("");
 
-  // Fetch available codes
   useEffect(() => {
     const fetchCodes = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('/codes');
+        const response = await fetch('/code');
         if (!response.ok) {
-          // Fallback to single code if multiple codes endpoint doesn't exist
-          const singleCodeResponse = await fetch('/code');
-          const singleCode = await singleCodeResponse.json();
-          setAvailableCodes([singleCode]);
-        } else {
-          const codes = await response.json();
-          setAvailableCodes(codes);
+          throw new Error("Failed to fetch codes");
         }
-      } catch (error) {
-        console.error("Error fetching codes:", error);
-        // Fallback to single code
-        try {
-          const singleCodeResponse = await fetch('/code');
-          const singleCode = await singleCodeResponse.json();
-          setAvailableCodes([singleCode]);
-        } catch (fallbackError) {
-          console.error("Error fetching fallback code:", fallbackError);
-        }
+        const code = await response.json();
+        setAvailableCodes([code]);
       } finally {
         setIsLoading(false);
       }
