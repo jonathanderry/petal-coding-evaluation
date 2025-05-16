@@ -1,1 +1,1 @@
-export * from "./ModifierChooser";
+export { default as CodeSelector } from './CodeSelector/CodeSelector';

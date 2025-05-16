@@ -21,7 +21,6 @@
       "modifier_code": "BMIANT",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-     
     },
     {
       "id": 27340,
@@ -38,7 +37,6 @@
       "modifier_code": "ANEST",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27345,
@@ -47,7 +45,6 @@
       "modifier_code": "SAQS",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-     
     },
     {
       "id": 27346,
@@ -56,7 +53,6 @@
       "modifier_code": "SSST",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27347,
@@ -65,7 +61,6 @@
       "modifier_code": "L30AN",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27348,
@@ -82,7 +77,6 @@
       "modifier_code": "EV",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27355,
@@ -91,7 +85,6 @@
       "modifier_code": "NTAM",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27356,
@@ -116,7 +109,6 @@
       "modifier_code": "L40",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27359,
@@ -133,7 +125,6 @@
       "modifier_code": "L44ANE",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-     
     },
     {
       "id": 27361,
@@ -158,7 +149,6 @@
       "modifier_code": "CASRG",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 27364,
@@ -167,7 +157,6 @@
       "modifier_code": "LVP75",
       "start_date": "2015-12-01 00:00:00",
       "end_date": null
-      
     },
     {
       "id": 57245,
@@ -176,7 +165,6 @@
       "modifier_code": "ANE",
       "start_date": "2018-11-01 00:00:00",
       "end_date": null
-      
     }
   ]
 }

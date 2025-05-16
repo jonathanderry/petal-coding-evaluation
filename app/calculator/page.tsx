@@ -1,28 +1,23 @@
 "use client";
 
-import { ModiferChooser } from "@/components";
-import { calculateCodePrice } from "@/utilities/calculateCodePrice";
-import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import dynamic from 'next/dynamic';
+import { useState } from "react";
+
+// Import CodeSelector with no SSR to avoid hydration errors
+const CodeSelector = dynamic(
+  () => import("@/components/CodeSelector/CodeSelector"),
+  { ssr: false }
+);
 
 const Calculator = () => {
-  const [code, setCode] = useState<Code>();
-  const [modifiers, setModifiers] = useState<Modifier[]>([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const fetchCode = async () => {
-    const response = await fetch(`/api/code`);
-    setCode(await response.json());
+  const handleTotalPriceChange = (price: number) => {
+    setTotalPrice(price);
   };
 
-  useEffect(() => {
-    fetchCode();
-  }, []);
-
-  const finalPrice =
-    code && modifiers ? calculateCodePrice({ code, modifiers }) : 0;
-
   return (
-    <main className="">
+    <main className="p-4">
       <h1>Calculator</h1>
       <h3>Context</h3>
       <p>
@@ -55,26 +50,8 @@ const Calculator = () => {
         Bonus: Add an endpoint for retrieving multiple codes and let a user
         build a full encounter
       </p>
-
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <ModiferChooser modifiers={code?.modifiers || []}>
-            Modifier 1
-          </ModiferChooser>
-        </Grid>
-        <Grid item xs={4}>
-          <ModiferChooser modifiers={code?.modifiers || []}>
-            Modifier 2
-          </ModiferChooser>
-        </Grid>
-        <Grid item xs={4}>
-          <ModiferChooser modifiers={code?.modifiers || []}>
-            Modifier 3
-          </ModiferChooser>
-        </Grid>
-      </Grid>
-
-      <p>The Price is: {finalPrice}</p>
+     
+      <CodeSelector onTotalPriceChange={handleTotalPriceChange} />
     </main>
   );
 };
